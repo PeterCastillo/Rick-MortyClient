@@ -28,6 +28,7 @@ html {
 
 body {
   margin: 0;
+  background-color: hsl(207, 26%, 17%);
   font-family: 'Roboto', sans-serif;
 }
 

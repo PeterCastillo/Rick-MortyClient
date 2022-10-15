@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components'; 
 
-export const CharacterIndividual = styled(Link)`
+export const CharacterIndividual = styled.span`
     display: inline-block;
     border-radius: 1rem;
 `

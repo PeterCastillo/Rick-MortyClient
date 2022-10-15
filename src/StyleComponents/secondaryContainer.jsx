@@ -18,9 +18,6 @@ export const SCverMas = styled.div`
     left: 0;
     background: linear-gradient(180deg, rgba(140, 4, 252, 0) 30%, #4a4a4b 80%);
     text-align: end;
-    &:hover {
-        height: 4rem;
-    }
 `
 
 export const SCverMasbtn = styled(Link)`
