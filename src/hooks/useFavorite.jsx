@@ -13,10 +13,11 @@ export const useFavorite = () => {
         if(userStateRegister.state){
             const itemFavorite = {...info, uid: userStateRegister.uid}
             const favoriteItem =  userFavorites.find(item => item.url == info.url)
+            console.log("pros")
             if(favoriteItem){
                 dispach(handleFavorite(info))
-                await deleteFavorite(favoriteItem.docId)
                 console.log("delete")
+                await deleteFavorite(favoriteItem.docId)
             } else { 
                 dispach(handleFavorite(info))
                 console.log("add")
