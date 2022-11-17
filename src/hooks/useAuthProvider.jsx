@@ -22,12 +22,12 @@ export const useAuthProvider = (onUserLogin , onUserNotLogin, onUserNotRegister)
                     onUserLogin(userInfo)
                     const res = await getfavorites(userInfo.uid)
                     dispach(handleFavoriteClean())
+                    res?.forEach(item => dispach(handleFavorite(item)))
                     dispach(handleUserState({
                         state:userInfo.processCompleted,
                         usarname:userInfo.username,
                         uid: userInfo.uid
                     }))
-                    res?.forEach(item => dispach(handleFavorite(item)))
                 } else {
                     onUserNotLogin(userInfo)
                 }

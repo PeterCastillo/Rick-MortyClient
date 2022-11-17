@@ -5,27 +5,11 @@ import { handleFavorite } from "../redux/actions/userFavorites"
 export const useFavorite = () => {
     const state = useSelector( (state) => state)
     const { userStateRegister  } = state.user
-    const { userFavorites } = state.userFavorite
     const dispach = useDispatch()
 
 
     const addFavorite = async(info) => {
-        if(userStateRegister.state){
-            const itemFavorite = {...info, uid: userStateRegister.uid}
-            const favoriteItem =  userFavorites.find(item => item.url == info.url)
-            console.log("pros")
-            if(favoriteItem){
-                dispach(handleFavorite(info))
-                console.log("delete")
-                await deleteFavorite(favoriteItem.docId)
-            } else { 
-                dispach(handleFavorite(info))
-                console.log("add")
-                await favorite(itemFavorite)
-            }
-        }else {
-            dispach(handleFavorite(info))
-        }
+        dispach(handleFavorite(info))
     }
 
     return { addFavorite }
